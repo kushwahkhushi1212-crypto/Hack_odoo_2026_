@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AssetFlow</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ============ LOGIN ============ -->
+<div id="login-screen">
+  <div class="login-card">
+    <div class="login-logo">AF</div>
+    <div class="login-title">AssetFlow</div>
+    <div class="login-sub">Sign in to your organization's asset console</div>
+    <div class="field">
+      <label>Email</label>
+      <input type="email" placeholder="name@company.com" id="login-email" value="khushi@company.com">
+    </div>
+    <div class="field">
+      <label>Password</label>
+      <input type="password" placeholder="••••••••••" id="login-pass" value="••••••••••">
+    </div>
+    <a href="#" class="forgot">Forgot password?</a>
+    <button class="btn-primary" onclick="doLogin()">Sign in</button>
+    <div class="signup-note">New here? Creating an account sets up an employee profile — admin access is assigned by your organization afterward.</div>
+    <div class="divider"></div>
+    <button class="btn" style="width:100%; justify-content:center;">Create account</button>
+  </div>
+</div>
+
+<!-- ============ APP ============ -->
+<div id="app" style="display:none;">
+  <div id="sidebar">
+    <div class="brand">
+      <div class="brand-mark">AF</div>
+      <div class="brand-name">AssetFlow</div>
+    </div>
+    <div class="nav-group" id="nav-group"></div>
+    <div class="nav-spacer"></div>
+    <div class="nav-foot">
+      <div class="avatar-sm">PS</div>
+      <div class="nav-foot-text">
+        <div class="nav-foot-name">Priya Shah</div>
+        <div class="nav-foot-role">IT Dept · Admin</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="main">
+    <div id="topbar">
+      <div id="screen-title">Dashboard</div>
+      <div class="search-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        <input placeholder="Search by tag, name, or QR code…" oninput="if(this.value.length>0){document.getElementById('nav-assets').click()}">
+      </div>
+      <div class="top-spacer"></div>
+      <div class="icon-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg><div class="dot-badge"></div></div>
+      <div class="icon-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a3 3 0 0 0-3 3v1.2A7 7 0 0 0 5 13v3l-1.5 2h17L19 16v-3a7 7 0 0 0-4-6.8V5a3 3 0 0 0-3-3z"/></svg></div>
+      <div class="avatar-sm" style="margin-left:4px;">PS</div>
+    </div>
+    <div id="content"></div>
+  </div>
+</div>
+
+<!-- ============ SCRIPTS ============ -->
+<!-- Order matters: icons/data → view builders → kanban → app.js (wires it all up) -->
+<script src="js/icons.js"></script>
+<script src="js/views/dashboard.js"></script>
+<script src="js/views/org.js"></script>
+<script src="js/views/assets.js"></script>
+<script src="js/views/transfer.js"></script>
+<script src="js/views/booking.js"></script>
+<script src="js/views/maintenance.js"></script>
+<script src="js/views/audit.js"></script>
+<script src="js/views/reports.js"></script>
+<script src="js/views/notifications.js"></script>
+<script src="js/kanban.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
