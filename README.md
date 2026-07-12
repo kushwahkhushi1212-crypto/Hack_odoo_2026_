@@ -129,4 +129,4 @@ Add screenshots of:
 
 - Khushi Kushwah
 - Khushi Swami
-- Koushal Agarwal 
+- Koshal Agarwal 
